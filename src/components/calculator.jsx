@@ -7,13 +7,15 @@ const Calculator = () => {
     calculatorReducer.reducer,
     calculatorReducer.initialState
   );
-  
-  const result = rows
-    .filter((row) => row.enabled)
-    .reduce((total, row) => {
+
+  const result = rows.reduce((total, row) => {
+    if (row.enabled) {
       let value = row.value || 0;
       return row.operation === "+" ? total + value : total - value;
-    }, 0);
+    } else {
+      return total;
+    }
+  }, 0);
 
   const newAddRowReference = useRef(null);
   useEffect(() => {
@@ -27,7 +29,7 @@ const Calculator = () => {
     <div className="calculator">
       <h2 className="text-center my-5">Simple Calculator Test Project</h2>
       <div className="row my-2">
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <button
             className="add-button btn btn-success  me-2 mb-1"
             onClick={() => {
@@ -45,7 +47,7 @@ const Calculator = () => {
             Reset All
           </button>
         </div>
-        <div className="col-6 text-end">
+        <div className="col-12 col-md-6 text-end">
           <h3>Result: {result.toLocaleString("en-US")}</h3>
         </div>
       </div>
