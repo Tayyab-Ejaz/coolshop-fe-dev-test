@@ -5,7 +5,7 @@ import Calculator from './components/calculator';
 
 const App = () => {
   return (
-    <div className="app ">
+    <div className="app " style={{backgroundImage: "url('/main-bg.jpg')"}}>
       <Calculator />
     </div>
   );
