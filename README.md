@@ -3,7 +3,9 @@
 
 It's a simple plus / minus application built using react.js. It consists of few basic components. Its sole purpose is to assess baisc experties in Reactjs.
 
-## Steps to setup & start
+App Link: https://coolshop-fe-dev-test.vercel.app/
+
+## Steps to setup & start development environment
 
 First, you need to clone the project.
 
